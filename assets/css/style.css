@@ -81,6 +81,7 @@ header {
      background-color: #024e76;
      border: none;
      font-size: 16px;
+     cursor: pointer;
  }
  /* Hero Style End */
  footer {
