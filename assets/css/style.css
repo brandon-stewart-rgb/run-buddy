@@ -96,6 +96,9 @@ header {
      width: 80%;
      margin: 0 auto;
  }
+ section {
+     padding: 20px 0;
+ }
  .section-title {
      font-size:  55px;
      color: #024e76;
@@ -192,7 +195,22 @@ header {
      text-align: left;
      margin: 30px 0 0 60px;
      color: white;
+     line-height: 1.4;
  }
+ .contact-info h3 {
+     color: #fce138;
+     font-size: 32px;
+ }
+ .contact-info p, .contact-info address {
+     margin: 20px 0;
+     line-height: 1.5;
+     font-size: 20px;
+     font-style: normal;
+ }
+ .contact-info a {
+     color: #fce138;
+ }
+ /* reach out styles end */
  footer {
      background: #fce138;
      width: 100%;
@@ -209,4 +227,5 @@ header {
      float:right;
      line-height: 1.5;
      text-align: right;
+     color: #39a6b2;
  }
