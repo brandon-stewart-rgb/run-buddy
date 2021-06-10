@@ -63,6 +63,10 @@ header {
  .hero-form p {
      margin: 5px 0 15px 0;
  }
+ /* secondary page hero */
+ .hero-secondary {
+    
+ }
  .form-input {
      border: 1px solid #024e76;
      display: block;
