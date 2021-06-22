@@ -3,15 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
 
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvitca, Arial, sans-serif;
 }
 
 header {
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -19,13 +24,14 @@ header {
  header h1 {
      font-weight: bold;
      font-size: 36px;
-     color: #fce138;
+     color: var(--primary-color);
      margin: 0;
      display: inline;
  }
  header a {
      text-decoration: none;
-     color: #fce138;
+     color: var(--primary-color);
+     z-index: 9999;
  }
  header nav  {  
      margin: 7px 0;  
@@ -66,7 +72,7 @@ header {
      line-height: 1.3;
  }
  .hero-text h1 {
-     color: #fce138;
+     color: var(--primary-color);
      font-size: 55px;
      font-weight: bold;
      font-style: italic;
@@ -76,10 +82,10 @@ header {
  }
 
  .hero-form {
-     background-color: #fce138;
+     background-color: var(--primary-color);
      padding: 20px;
-     color: #024e76;
-     border: solid 3px #024e76;
+     color: var(--secondary-color);
+     border: solid 3px var(--secondary-color);
      width: 40%;
      margin: 3.5%;
      opacity: 0.8;
@@ -92,16 +98,69 @@ header {
  .hero-form p {
      margin: 5px 0 15px 0;
  }
+ .checkbox-wrapper input, .radio-wrapper input {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+  }
+  .checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid var(--secondary-color);  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+  }
+  .radio-wrapper label::before {
+    border-radius: 50%;
+  }
+  .radio-wrapper label::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border-radius: 50%;
+      background: var(--secondary-color);
+      position: absolute;
+      left: -29px;
+      top:-3px;  
+      background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+    }
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+}
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
+
  /* secondary page hero */
+
  .hero-secondary {
     
  }
  .form-input {
-     border: 1px solid #024e76;
+     border: 1px solid var(--secondary-color);
      display: block;
      padding: 7px 15px;
      font-size: 16px;
-     color: #024e76;
+     color: var(--secondary-color);
      width: 100%;
      margin: 0 0 15px 0;
      border-radius: 8px;
@@ -111,8 +170,8 @@ header {
  }
  .hero-form button {
      padding: 10px 20px;
-     color:#fce138;
-     background-color: #024e76;
+     color:var(--primary-color);
+     background-color: var(--secondary-color);
      border: none;
      font-size: 16px;
      cursor: pointer;
@@ -126,7 +185,7 @@ header {
 }
  .intro p {
      line-height: 1.7;
-     color: #39a6b2;
+     color: var(--tertiary-color);
      width: 80%;
      margin: 0 auto;
      text-align: center;
@@ -140,25 +199,25 @@ header {
      margin: 0 auto 35px auto;
      width: 50%;
      font-size:  55px;
-     color: #024e76;
+     color: var(--secondary-color);
      border-bottom: 3px solid;
-     border-color: #fce138;
+     border-color: var(--primary-color);
      
  }
  .primary-border {
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
 .secondary-border {
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 }
 .steps {
-    background-color: #fce138;
+    background-color: var(--primary-color);
 }
 .step {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -167,7 +226,7 @@ header {
 .step-text h4 {
     font-size: 26px;
     line-height: 1.5;
-    color: #024e76;
+    color: var(--secondary-color);
 }
 .step-info {
     display: flex;
@@ -184,11 +243,11 @@ header {
 }
 .step-text p {
 font-size: 18px;
-color:#024e76;
+color:var(--secondary-color);
 }
  .step h3 {
      flex: 1 30%;
-     color: #024e76;
+     color: var(--secondary-color);
      font-size:  46px;
      margin-top: 10px;
  }
@@ -205,8 +264,8 @@ color:#024e76;
      text-align: center;
      flex: 1;
      margin: 20px;
-     background: #024e76;
-     color: #fce138;
+     background: var(--secondary-color);
+     color: var(--primary-color);
      
  }
  .trainer img {
@@ -239,10 +298,10 @@ color:#024e76;
  }
  /* reach out styles start */
  .contact {
-     background: #024e76;
+     background: var(--secondary-color);
  }
  .contact h2 {
-     color: #fce138;
+     color: var(--primary-color);
  }
  .contact-info iframe {
      width: 400px;
@@ -258,7 +317,7 @@ color:#024e76;
      line-height: 1.4;
  }
  .contact-info h3 {
-     color: #fce138;
+     color: var(--primary-color);
      font-size: 32px;
  }
  .contact-info p, .contact-info address {
@@ -268,25 +327,25 @@ color:#024e76;
      font-style: normal;
  }
  .contact-info a {
-     color: #fce138;
+     color: var(--primary-color);
  }
  /* reach out styles end */
  footer {
      display: flex;
      justify-content: space-between;
      flex-wrap: wrap;
-     background: #fce138;
+     background: var(--primary-color);
      width: 100%;
      padding: 40px 35px;
-     color: #024e76;
+     color: var(--secondary-color);
  }
  footer h2 {
-     color: #024e76;
+     color: var(--secondary-color);
      font-size: 30px;
      margin: 0;
  }
  footer div { 
      line-height: 1.5;
      text-align: right;
-     color: #39a6b2;
+     color: var(--tertiary-color);
  }
